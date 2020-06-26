@@ -1,0 +1,73 @@
+<html>
+<head>
+<style>
+button {
+
+    background: transparent;
+    border: none !important;
+    font-size:0;
+}
+input{
+	background:transparent;
+	border:none;
+	color:blue;
+	font-size:17px;
+}
+</style>
+</head>
+<body>
+	<form method="POST">
+		Animal List
+
+<ul>
+    {{range .Todos}}
+        
+<!--            <li>{{.Name}}</li>
+			<li class="done">{{.Name}}</li>
+			<li class="done">{{.Recommanded_For}}</li>
+			<li class="done">{{.Maintenance_level}}</li>
+			<li class="done">{{.Lifespan}}</li>
+			<li class="done">{{.Temperament}}</li>
+			<li class="done">{{.Health_risk}}</li>
+            <li><img src="{{.Image_url}}"></li>
+-->			
+        
+	<table>
+	<tr>
+		<td><img src="{{.Image_url}}" width="300" height="250"></td>
+		<td  width="250">
+			<br>
+			<font size="6">{{.Name}}</font><br>
+			Recommanded For   :<br>
+			Maintenance Level :<br>
+			Lifespan          :<br>
+			Temperament       :<br>
+			Health Risk       :<br>
+			
+			<input value="know more" type="submit" onclick="open_some('{{.Url}}')">
+		</td>
+		<td>
+			<br><br><br>
+			{{.Recommanded_For}}<br>
+			{{.Maintenance_level}}<br>
+			{{.Lifespan}}<br>
+			{{.Temperament}}<br>
+			{{.Health_risk}}<br>
+			
+			
+			<button id="arc">{{.Url}}</button>
+		</td>
+	<tr>
+	</table>
+    {{end}}
+</ul>
+		
+	</form>
+	<script>
+	function open_some(url){
+	
+		window.open(url)
+	}
+	</script>
+</body>
+</html>
